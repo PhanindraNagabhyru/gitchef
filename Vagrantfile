@@ -70,10 +70,11 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision :chef_client do |chef|
-      chef.chef_server_url = "https://api.chef.io/organizations/vgo"
+      chef.chef_server_url = "https://manage.chef.io/organizations/vgo"
           chef.validation_key_path = "./.chef/vgo-validator.pem"
 	      chef.validation_client_name = "vgo-validator"
 	          chef.node_name = "vagrantnode"
+			  config.omnibus.chef_version = :latest
 		    
 		    
 end
